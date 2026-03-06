@@ -18,4 +18,4 @@ In progress
 - conclusions
 
 ## Author
-[Ton prénom]
+Benedicte Nguena
