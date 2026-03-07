@@ -1,67 +1,84 @@
-# IT Operations Analytics Platform
+# IT Operations Analytics Platform (V1)
 
 ## Project Overview
-This project simulates a real IT operations environment and analyzes helpdesk activity to identify performance issues, improve support efficiency, and support business decisions.
+This project is a portfolio-ready IT Operations Analytics Platform built with Python, pandas, and Streamlit. It simulates an IT support environment, processes ticket data, and presents operational KPIs in an interactive dashboard.
 
 ## Business Problem
-IT teams often struggle with:
-- slow ticket resolution
-- repeated incidents
-- poor SLA visibility
-- limited performance monitoring
-- lack of decision-ready KPIs
+IT support teams need fast visibility into service performance:
+- How many tickets are open vs resolved?
+- Which categories and priorities create the most workload?
+- Are SLAs being breached?
+- How satisfied are users with support outcomes?
 
-This project aims to solve these issues through data analysis, KPI tracking, dashboarding, and technical reporting.
+Without this visibility, teams struggle to prioritize improvements and communicate performance to stakeholders.
 
-## Project Goals
-- analyze IT support tickets
-- measure support team performance
-- identify bottlenecks in ticket resolution
-- track operational KPIs
-- provide actionable recommendations
-- build a dashboard for decision-making
-
-## Target Roles
-This project is relevant for:
-- Data Analyst
-- IT Support
-- Software Developer
-- IT Consultant
-
-## Planned Features
-### 1. Data Processing
-- import raw ticket data
-- clean and transform datasets
-- calculate ticket resolution time
-- prepare KPI-ready datasets
-
-### 2. Analytics
-- total tickets
-- open vs resolved tickets
-- average resolution time
-- SLA compliance
-- top incident categories
-- workload by team or agent
-- customer satisfaction trends
-
-### 3. Dashboard
-- interactive KPI dashboard
-- filtering by date, category, priority, team, location
-
-### 4. Reporting
-- identify main operational issues
-- suggest improvement actions
-- summarize findings for business stakeholders
+## Features
+- Synthetic IT support ticket dataset generation (500+ rows)
+- Data cleaning and transformation pipeline
+- KPI engineering:
+  - `resolution_time_hours`
+  - `SLA_breached`
+- Interactive Streamlit dashboard with:
+  - total tickets
+  - open tickets
+  - resolved tickets
+  - average resolution time
+  - SLA breach rate
+  - tickets by category
+  - tickets by priority
+  - tickets over time
+  - satisfaction score overview
+- Sidebar filters for category, priority, team, and location
 
 ## Tech Stack
 - Python
 - pandas
+- numpy
 - Streamlit
-- SQL
-- GitHub
+- Plotly
 
-## Project Status
-Planning and repository structuring in progress.
+## Project Structure
+```text
+it-operations-analytics-platform/
+|-- app/
+|   `-- app.py
+|-- data/
+|   |-- raw/
+|   |   `-- tickets_raw.csv
+|   `-- processed/
+|       `-- tickets_cleaned.csv
+|-- src/
+|   |-- generate_data.py
+|   `-- process_data.py
+|-- requirements.txt
+|-- .gitignore
+`-- README.md
+```
 
-## Author
-Benedicte Nguena
+## How to Run Locally
+1. Create and activate a virtual environment (optional but recommended).
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Generate synthetic raw data:
+   ```bash
+   python src/generate_data.py
+   ```
+4. Process the data:
+   ```bash
+   python src/process_data.py
+   ```
+5. Launch the dashboard:
+   ```bash
+   streamlit run app/app.py
+   ```
+
+## What This Project Demonstrates for Recruiters
+- Data Analyst: data cleaning, KPI modeling, trend analysis, dashboarding
+- IT Support: ticket lifecycle analysis, SLA monitoring, operational insights
+- Software Development: clean Python scripts, structured project layout, reusable logic
+- IT Consulting: turning operational data into clear, decision-ready reporting
+
+## Current Scope
+V1 focuses on a complete, clean baseline workflow from raw data generation to dashboard insights. Automated tests and advanced modeling are intentionally deferred to future versions.
